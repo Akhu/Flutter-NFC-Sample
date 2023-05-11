@@ -15,9 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Démo NFC avec Flutter',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-      ),
+      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.lime),
       routes: {
         '/': (context) => const MainMenu(),
         '/nfc/write': (context) => NfcWriteData(),

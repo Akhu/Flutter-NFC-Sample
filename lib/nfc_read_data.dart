@@ -18,6 +18,14 @@ class _NfcReadDataState extends State<NfcReadData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          title: Row(
+        children: const [
+          Icon(Icons.document_scanner_rounded),
+          SizedBox(width: 10),
+          Text('NFC Reading'),
+        ],
+      )),
       body: ListView(
         children: [
           GestureDetector(
@@ -28,17 +36,22 @@ class _NfcReadDataState extends State<NfcReadData> {
                     })
                   },
               child: NFCWrapperView(isScanning: _isScanning)),
-          FutureBuilder(
-            future: _scannedTag,
-            builder: (BuildContext context, AsyncSnapshot snapshot) {
-              if (snapshot.hasData) {
-                return Column(
-                  children: readNdef(snapshot.data),
-                );
-              } else {
-                return const Text('No data');
-              }
-            },
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: FutureBuilder(
+              future: _scannedTag,
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                if (snapshot.hasData) {
+                  return Column(
+                    children: readNdef(snapshot.data),
+                  );
+                } else {
+                  return const Center(
+                      child: Text(
+                          'No data, tap on the NFC icon to start reading'));
+                }
+              },
+            ),
           ),
         ],
       ),

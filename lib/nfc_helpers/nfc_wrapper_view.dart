@@ -15,14 +15,14 @@ class NFCWrapperView extends StatelessWidget {
         width: 250.0,
         height: 250.0,
         decoration: BoxDecoration(
-          color: _isScanning ? Colors.green[100] : Colors.blueGrey[100],
+          color: _isScanning ? Colors.green[100] : Colors.amber[100],
           shape: BoxShape.circle,
         ),
         child: Center(
             child: Icon(
           CupertinoIcons.radiowaves_right,
           size: 100,
-          color: _isScanning ? Colors.green[400] : Colors.blueGrey[400],
+          color: _isScanning ? Colors.green[400] : Colors.amber[400],
         )));
   }
 }
