@@ -4,16 +4,29 @@ A simple app that use NFC to read and write data.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for a Flutter application that uses NFC.
+
 
 ## Pre-requisites
 
-You need to have a device that supports NFC. You can check if your device supports NFC by going to Settings > About phone > NFC.
+You need to have a device that supports NFC. 
+
+> You can check if your device supports NFC by going to Settings > About phone > NFC.
+
+## Screenshots
+![](Screenshot_Home.png)
+![](Screenshot_Write.png)
 
 ## Description of files
 * `📁 nfc_helpers` contains the code that is used to read and write NFC tags and also to display nfc data easily on the UI.
 * `nfc_read_data.dart` contains example of code that is used to read NFC tags.
 * `nfc_write_data.dart` contains example of code that is used to write NFC tags.
+
+## Android Specific Setup
+Add the `android.permission.NFC` permission to your `AndroidManifest.xml` file
+```xml
+<uses-permission android:name="android.permission.NFC" />
+```
 
 ## iOS specific setup
 

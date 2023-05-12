@@ -56,7 +56,7 @@ class _KeycardCreateNfcState extends State<NfcWriteData> {
                     padding: const EdgeInsets.fromLTRB(20, 40, 20, 40),
                     child: Column(
                       children: [
-                        Text("Va être écrit sur le tag: $_dataToWrite",
+                        Text("Will be written on tag: $_dataToWrite",
                             style: TextStyle(
                                 color: Colors.orangeAccent[800],
                                 fontSize: 14,
